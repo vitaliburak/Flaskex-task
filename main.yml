@@ -43,6 +43,9 @@
   
   - name: move to /html
     shell: rsync -r /home/centos/Flaskex/*  /var/www/html
+   
+  - name: chown
+    shell: chown -R apache:apache /var/www/html
 
   - name: Run app
     command: python app.py chdir=/var/www/html
